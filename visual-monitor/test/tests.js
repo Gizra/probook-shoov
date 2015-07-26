@@ -41,7 +41,7 @@ var caps = selectedCaps ? capsConfig[selectedCaps] : undefined;
 var providerPrefix = process.env.PROVIDER_PREFIX ? process.env.PROVIDER_PREFIX + '-' : '';
 var testName = selectedCaps ? providerPrefix + selectedCaps : providerPrefix + 'default';
 
-var baseUrl = process.env.BASE_URL ? process.env.BASE_URL : 'http://shoov.io';
+var baseUrl = process.env.BASE_URL ? process.env.BASE_URL : 'https://www.probook.co.il';
 
 describe('Visual monitor testing', function() {
 
@@ -56,14 +56,28 @@ describe('Visual monitor testing', function() {
     shoovWebdrivercss.after(done);
   });
 
-  it('should show the home page',function(done) {
+  it('should show the computers books page',function(done) {
     client
-      .url(baseUrl)
-      .webdrivercss(testName + '.homepage', {
+      .url(baseUrl + '/cat-108-Computers_.aspx')
+      .webdrivercss(testName + '.computers-books', {
         name: '1',
-        exclude: [],
-        remove: [],
-        screenWidth: selectedCaps == 'chrome' ? [320, 640, 960, 1200] : undefined,
+        exclude:
+          [
+          // Product thumb.
+          '.productthumb img',
+          '.price',
+          ],
+        remove:
+          [
+            // Product thumb.
+            '.name',
+            '.item',
+            // Pagination.
+            '.pagingdiv',
+            // Navbar ie11 only.
+            selectedCaps == 'ie11' ? '.navbar-fixed-top' : '',
+          ],
+        screenWidth: selectedCaps == 'chrome' ? [960, 1200] : undefined
       }, shoovWebdrivercss.processResults)
       .call(done);
   });
