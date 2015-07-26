@@ -65,11 +65,13 @@ describe('Visual monitor testing', function() {
           [
           // Product thumb.
           '.productthumb .pic',
-          '.name',
           '.price',
           ],
         remove:
           [
+            // Product thumb.
+            '.name',
+            '.item',
             // Pagination.
             '.pagingdiv',
           ],
