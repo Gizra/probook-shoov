@@ -1,0 +1,11 @@
+addons:
+  - selenium
+
+before_script:
+  # Instead of npm/ composer install, we save time by using a gzipped file.
+  - cd behat
+  - tar zxf vendor_bin.tar.gz
+  - cp behat.local.yml.shoov behat.local.yml
+
+script:
+  - ./bin/behat --tags=~wip

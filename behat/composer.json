@@ -1,0 +1,10 @@
+{
+  "name": "Behat tests for http://probook.co.il",
+  "description": "Functional testing for http://probook.co.il site.",
+  "require": {
+    "drupal/drupal-extension": "~3.0"
+  },
+  "config": {
+    "bin-dir": "bin/"
+  }
+}
