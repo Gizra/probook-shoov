@@ -74,6 +74,7 @@ describe('Visual monitor testing', function() {
             '.item',
             // Pagination.
             '.pagingdiv',
+            // Navbar ie11 only.
             selectedCaps == 'ie11' ? '.navbar-fixed-top' : '',
           ],
         screenWidth: selectedCaps == 'chrome' ? [960, 1200] : undefined
