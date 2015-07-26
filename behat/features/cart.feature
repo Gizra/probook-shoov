@@ -8,5 +8,5 @@ Feature: Add to cart
   Scenario: Add to cart product
     Given I am an anonymous user
     When  I visit "product-9781451193794-POCKET_MEDICINE_5E_IE.aspx"
-    And   I select size and add to cart
+    And   I add to cart
     Then  I should see the item added to the cart

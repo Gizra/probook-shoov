@@ -14,11 +14,10 @@ class FeatureContext extends MinkContext implements SnippetAcceptingContext {
   public function iAmAnAnonymousUser() {
     // Just let this pass-through.
   }
-
   /**
-   * @When I select size and add to cart
+   * @When I add to cart
    */
-  public function iSelectSizeAndAddToCart() {
+  public function iAddToCart() {
 
     // Add to cart.
     $element = $this->getSession()->getPage()->find('css', '#bigaddtobasket');
