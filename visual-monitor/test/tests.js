@@ -64,7 +64,7 @@ describe('Visual monitor testing', function() {
         exclude:
           [
           // Product thumb.
-          '.productthumb .pic',
+          '.productthumb img',
           '.price',
           ],
         remove:
@@ -75,7 +75,7 @@ describe('Visual monitor testing', function() {
             // Pagination.
             '.pagingdiv',
           ],
-        screenWidth: selectedCaps == 'chrome' ? [320, 640, 960, 1200] : undefined
+        screenWidth: selectedCaps == 'chrome' ? [960, 1200] : undefined
       }, shoovWebdrivercss.processResults)
       .call(done);
   });
